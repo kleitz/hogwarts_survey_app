@@ -22,16 +22,24 @@ apicalls.post(formInfo).success(function(results){
 
 }
 
-// $scope.get = function() {
+$scope.get = function() {
 apicalls.getAll().then(function(results){
   console.log(results);
 
 })
 
-// }
+}
 
 }])
 
-app.controller('surveyController', ['$scope', function($scope, $routeParams) {
-  $scope.survey = "Hello Wizarding World, here's a survey!!!"
+app.controller('surveyController', ['$scope', '$location', '$auth', function($scope, $location, $auth) {
+  $scope.survey = "Hello Wizarding World, here's a survey!!!";
+  $scope.authenticate = function(provider) {
+    $auth.authenticate(provider).then(function(results){
+      console.log(results);
+      console.log($location.path('/#/'));
+      $location.path('/#/')
+    });
+
+  };
 }])

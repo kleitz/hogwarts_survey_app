@@ -1,6 +1,6 @@
-var app = angular.module('hogwarts', ['ngRoute']);
+var app = angular.module('hogwarts', ['ngRoute', 'satellizer']);
 
-app.config(function($routeProvider){
+app.config(function($routeProvider, $authProvider){
   $routeProvider
     .when('/', {
       templateUrl: 'partials/splash.html',
@@ -22,8 +22,21 @@ app.config(function($routeProvider){
       templateUrl: 'partials/survey4.html',
       controller: 'surveyController'
     })
-    .when('/5', {
+    .when('/auth/facebook', {
       templateUrl: 'partials/survey5.html',
       controller: 'surveyController'
     })
+  // $authProvider.loginUrl = 'http://localhost:5000/auth/login';
+  // $authProvider.signupUrl = 'http://localhost:5000/auth/signup';
+
+    $authProvider.facebook({
+        clientId: '1006279116108926',
+        scope: ['email'],
+        scopeDelimiter: ',',
+        profileFields: ['name', 'id', 'picture.type(large)', 'emails']
+      });
+
+
+
+//  clientId: 1006279116108926,
 })

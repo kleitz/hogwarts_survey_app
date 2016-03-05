@@ -1,5 +1,4 @@
 <div ng-controller='surveyController'>
-
   <div class='theQuiz' ng-repeat='question in survey'>
     <form ng-submit='houseSurvey(question)'>
       <label for="surveyOptions">{{question.question}}</label>
@@ -13,6 +12,5 @@
     </form>
     <hr>
   </div>
-
-
+  <button ng-click="authenticate('facebook')">Sign in with Facebook</button>
 </div>

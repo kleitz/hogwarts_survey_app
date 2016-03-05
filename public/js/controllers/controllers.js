@@ -25,32 +25,33 @@ apicalls.post(formInfo).success(function(results){
 
 }
 
-// $scope.get = function() {
 apicalls.getAll().then(function(results){
   console.log(results);
-
 })
 
-// }
+$scope.get = function() {
+apicalls.getAll().then(function(results){
+  console.log(results);
+})
+
+}
 
 }])
 
-app.controller('surveyController', ['$scope', 'survey', function($scope, survey, $routeParams) {
+app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', function($scope, survey, $location, $auth) {
   $scope.survey = survey.surveyQuestions;
   $scope.whatAnswer = function(item) {
     console.log(item);
   }
   $scope.houseSurvey= function(question) {
     console.log(question.answers);
-
   }
 
+  $scope.authenticate = function(provider) {
+    $auth.authenticate(provider).then(function(results){
+      console.log($location.path('/#/'));
+      $location.path('/#/')
+    });
 
-
-
-
-
-
-
-
+  };
 }])

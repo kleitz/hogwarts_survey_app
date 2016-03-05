@@ -1,6 +1,9 @@
 app.controller('splashController', ['$scope', '$http', '$location', 'apicalls', function($scope, $http, $location, apicalls) {
-  $scope.lolz = "Hello Wizarding World!!!"
 
+$scope.welcomeEnvelope = true;
+$scope.envelopeToggle= function() {
+  $scope.welcomeEnvelope = !$scope.welcomeEnvelope;
+}
 
 $scope.post = function(formInfo) {
 
@@ -32,6 +35,22 @@ apicalls.getAll().then(function(results){
 
 }])
 
-app.controller('surveyController', ['$scope', function($scope, $routeParams) {
-  $scope.survey = "Hello Wizarding World, here's a survey!!!"
+app.controller('surveyController', ['$scope', 'survey', function($scope, survey, $routeParams) {
+  $scope.survey = survey.surveyQuestions;
+  $scope.whatAnswer = function(item) {
+    console.log(item);
+  }
+  $scope.houseSurvey= function(question) {
+    console.log(question.answers);
+
+  }
+
+
+
+
+
+
+
+
+
 }])

@@ -1,3 +1,18 @@
 <div ng-controller='surveyController'>
-  <h1>{{survey}}</h1>
+
+  <div class='theQuiz' ng-repeat='question in survey'>
+    <form ng-submit='houseSurvey(question)'>
+      <label for="surveyOptions">{{question.question}}</label>
+      <select class="surveyOptions" name='surveyOptions'>
+        <option value="1" ng-repeat='answer in question.answers' ng-click='whatAnswer(item)'>{{answer.option}}</option>
+        <!-- <option value="1">{{answer.option2}}</option>
+        <option value="1">{{answer.option3}}</option>
+        <option value="1">{{answer.option4}}</option> -->
+      </select>
+      <button type="submit" name="submit">Submit</button>
+    </form>
+    <hr>
+  </div>
+
+
 </div>

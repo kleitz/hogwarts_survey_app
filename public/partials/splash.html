@@ -1,3 +1,12 @@
 <div ng-controller='splashController'>
-  <h1>{{lolz}}</h1>
+  <div class='splashContainer'>
+    <div class='envelopeClosed' ng-click='envelopeToggle()'>
+      <img class='closed' src="http://www.clker.com/cliparts/5/7/2/2/1194984500251947888mail1.svg.hi.png">
+    </div>
+    <div class='envelopeOpen' ng-hide='welcomeEnvelope'>
+      <img class='open' src="http://images.all-free-download.com/images/graphiclarge/open_envelope_clip_art_9256.jpg">
+      <a href="/#/1" class='welcomeMessage'>Find your place at Hogwarts...</a>
+    </div>
+    <h1 class='welcomeMessage'></h1>
+  </div>
 </div>

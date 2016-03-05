@@ -30,13 +30,20 @@ router.post('/auth/facebook', function(req,res){
           return res.status(500).send({ message: profile.error.message });
         }
           var user = {}
-          user.facebook_id = profile.id
-          user.image_url = 'https://graph.facebook.com/'+profile.id+'/picture?type=large'
+          var image = 'https://graph.facebook.com/'+profile.id+'/picture?type=large'
+          user.profilepicture = 'https://graph.facebook.com/'+profile.id+'/picture?type=large'
+          user.fb_id = profile.id
           user.email = profile.email
-          user.first_name = profile.first_name
-          user.last_name = profile.last_name
-          user.name = profile.name;
-            console.log(user);
+          user.firstname = profile.first_name
+          user.lastname = profile.last_name
+          user.token = process.env.access_secret
+          unirest.post('https://hogwartsapi.herokuapp.com/users/')
+          .send(user)
+          .end(function(results){
+            console.log('got here!');
+            res.send(results)
+          })
+
 
 
       })

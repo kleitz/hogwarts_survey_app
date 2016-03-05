@@ -17,13 +17,12 @@ router.get('/name', function(req,res,next){
 
 
 router.post('/name', function(req, res, next) {
-  console.log(req.body);
   req.body.token = process.env.access_secret
   unirest.post('https://hogwartsapi.herokuapp.com/users/')
   .send(req.body)
   .end(function(results){
     console.log('got here!');
-    res.send(results)
+    res.send(results.data)
   })
 });
 

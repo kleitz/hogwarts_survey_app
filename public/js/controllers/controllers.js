@@ -49,8 +49,9 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', fu
 
   $scope.authenticate = function(provider) {
     $auth.authenticate(provider).then(function(results){
-      console.log($location.path('/#/'));
-      $location.path('/#/')
+      // console.log($location.path('/#/'));
+      console.log(results.data.body.message);
+      $location.path('/1')
     });
 
   };

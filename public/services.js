@@ -261,4 +261,70 @@ app.service('survey', function() {
       ]
     }
   ]
+
+  // ===================================================================
+  //This empty array collects all the values from the sortingHat object so we can find the greatest one.
+  var arr = [];
+  this.getSorted = function() {
+    //This iterates over our object so that we can get our values to push to "arr"
+    for (var key in this.sortingHat) {
+      if (this.sortingHat.hasOwnProperty(key)) {
+        arr.push(this.sortingHat[key])
+      }
+      //This tells us the INDEX of the largest number in the array, that way we can access the corresponding house name.
+      var questionIndex = arr.indexOf(Math.max(...arr));
+    }
+    //The last element in the array is an empty string, so we just get that out to clean it up.
+    arr.pop()
+
+    //Here we just match up what the dominant house name should be in reference to the index.
+    if (questionIndex === 0) {
+      this.sortingHat.dominantHouse = 'gryffindor'
+    }
+    if (questionIndex === 1) {
+      this.sortingHat.dominantHouse = 'hufflepuff'
+    }
+    if (questionIndex === 2) {
+      this.sortingHat.dominantHouse = 'slytherin'
+    }
+    if (questionIndex === 3) {
+      this.sortingHat.dominantHouse = 'ravenclaw'
+    }
+    // console.log(this.sortingHat);
+  }
+// ===================================================================
+
+
+
+
+// ===================================================================
+  this.answerSelect = function(answer) {
+    if (answer.house === 'gryffindor') {
+      this.sortingHat.gryffindor += 1;
+    }
+    if (answer.house === 'slytherin') {
+      this.sortingHat.slytherin += 1;
+    }
+    if (answer.house === 'ravenclaw') {
+      this.sortingHat.ravenclaw += 1;
+    }
+    if (answer.house === 'hufflepuff') {
+      this.sortingHat.hufflepuff += 1;
+    }
+    // console.log(this.sortingHat);
+  }
+  this.sortingHat = {};
+  this.sortingHat.gryffindor = 0;
+  this.sortingHat.hufflepuff = 0;
+  this.sortingHat.slytherin = 0;
+  this.sortingHat.ravenclaw = 0;
+  this.sortingHat.dominantHouse = '';
+  this.survey = this.surveyQuestions;
+  // ===================================================================
+
+
+
+
+
+
 })

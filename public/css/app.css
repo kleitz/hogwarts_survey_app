@@ -7,7 +7,7 @@
   position: absolute;
   background-color: #272d32;
   width: 100vw;
-  height: 100vh;
+  height: auto;
 }
 .welcomeMessage {
   color: #a27502;
@@ -34,4 +34,20 @@
   position: absolute;
   left: 35%;
   bottom: 20%;
+}
+h4 {
+  text-align: center;
+  margin: auto;
+}
+.answers {
+  text-align: center;
+}
+.answers:hover {
+  cursor: pointer;
+}
+.theQuiz {
+  margin: auto;
+}
+.ng-scope {
+  margin: auto;
 }

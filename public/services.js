@@ -290,7 +290,7 @@ app.service('survey', function() {
     if (questionIndex === 3) {
       this.sortingHat.dominantHouse = 'ravenclaw'
     }
-    // console.log(this.sortingHat);
+    console.log(this.sortingHat);
   }
 // ===================================================================
 
@@ -311,7 +311,7 @@ app.service('survey', function() {
     if (answer.house === 'hufflepuff') {
       this.sortingHat.hufflepuff += 1;
     }
-    // console.log(this.sortingHat);
+    console.log(this.sortingHat);
   }
   this.sortingHat = {};
   this.sortingHat.gryffindor = 0;

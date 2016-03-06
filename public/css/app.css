@@ -3,51 +3,104 @@
   color: #a27502;
 }
 .wholePageContainer {
-  display: flex;
-  position: absolute;
-  background-color: #272d32;
+  /*background-image: radial-gradient(
+    #47443c,
+    #201a10
+    );*/
+  height: 100vh;
   width: 100vw;
-  height: auto;
+  display: flex;
+}
+
+@keyframes wingardiumLeviosa {
+  0%, 100% { top: 50% }
+  50% { top: 49% }
+}
+@keyframes engorgio {
+  0% { width:  50vw; opacity: 0 }
+  100% { width: 52vw; opacity: 1; margin-left: -26vw;}
+}
+@keyframes fadeIn {
+  from { opacity:0 }
+  to { opacity:1 }
+}
+@keyframes fadeOut {
+  from { opacity:1 }
+  to { opacity:0 }
+}
+
+.envelopes {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
 }
 .welcomeMessage {
+  animation: fadeIn ease-in 1;
+  animation-duration: 2s;
+  /*animation-delay: 2s;*/
+  text-align: center;
+  z-index: 1;
   color: #a27502;
   margin: auto;
-  margin-top: 4vh;
   font-family: 'Averia Serif Libre', cursive;
 }
 .splashContainer {
   display: flex;
-  flex-direction: column;
+  position: relative;
   width: 100vw;
   height: 100vh;
 }
-.envelopeClosed {
-  margin: auto;
-  margin-bottom: 0px;
+.closed, .open {
+  position: absolute;
+  width: 50vw;
+  height: auto;
+  left: 50%;
+  margin-left: -25vw;
+  top: 50%;
+  margin-top: -25vw;
 }
-.closed {
-  /*position: absolute;*/
-  width: 30vw;
-  height: 20vw;
+.fadeIn {
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:2s;
 }
 .open {
-  position: absolute;
-  left: 35%;
-  bottom: 20%;
+  animation: engorgio ease-in 1;
+  /*animation: fadeIn ease-in 1;*/
+  animation-fill-mode:forwards;
+  animation-duration:.8s;
 }
-h4 {
+.closed:hover {
+  transition: all 1s ease-in-out;
+  animation: wingardiumLeviosa 1.7s infinite;
+}
+h3 {
   text-align: center;
   margin: auto;
 }
 .answers {
   text-align: center;
+  margin: 3vh;
 }
 .answers:hover {
   cursor: pointer;
 }
 .theQuiz {
   margin: auto;
+  padding: 15%;
+  padding-left: 10%:
+  padding-right: 10%:
 }
 .ng-scope {
   margin: auto;
+}
+.surveyPage {
+  background-color: white;
+  border: 2px solid black;
+  width: 90vw;
+  height: 70vh;
+  overflow: scroll;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:1s;
 }

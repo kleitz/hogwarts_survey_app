@@ -1,10 +1,9 @@
-<div ng-controller='surveyController'>
+<div class='surveyPage' ng-controller='surveyController'>
   <div class='theQuiz' ng-repeat='question in survey'>
-      <h4 for="surveyOptions">{{question.question}}</h4>
+      <h3 for="surveyOptions">{{question.question}}</h3>
       <div ng-repeat='answer in question.answers'>
-        <p class='answers' ng-click='answerSelect(answer)'>{{answer.option}}</p>
+        <p class='answers {{locomotor}}' ng-click='answerSelect(answer)'>{{answer.option}}</p>
       </div>
-    <hr>
   </div>
   <button type="button" ng-click="getSorted()">Get Sorted!!!</button>
   <button ng-click="authenticate('facebook')">Sign in with Facebook</button>

@@ -1,8 +1,8 @@
 app.controller('splashController', ['$scope', 'survey', '$http', '$location', 'apicalls', function($scope, survey, $http, $location, apicalls) {
 
-$scope.welcomeEnvelope = true;
+$scope.openEnvelope = false;
 $scope.envelopeToggle= function() {
-  $scope.welcomeEnvelope = !$scope.welcomeEnvelope;
+  $scope.openEnvelope = !$scope.openEnvelope;
 }
 
 $scope.post = function(formInfo) {
@@ -42,6 +42,19 @@ apicalls.getAll().then(function(results){
 //This is our controller for our survey
 app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', function($scope, survey, $location, $auth) {
 
+
+  $(".surveyPage").click(function() {
+    scrollAnswers();
+    $('.surveyPage').animate({
+        scrollTop: $(".one").offset().top},
+        'slow');
+  });
+
+  scrollAnswers = function() {
+    $scope.locomotor = "one"
+    console.log("some shit");
+  }
+  $scope.questionScroll = survey.questionScroll;
   $scope.getSorted = survey.getSorted;
   $scope.answerSelect = survey.answerSelect;
   $scope.sortingHat = survey.sortingHat;

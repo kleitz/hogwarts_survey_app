@@ -36,7 +36,7 @@ router.post('/auth/facebook', function(req,res){
           user.firstname = profile.first_name
           user.lastname = profile.last_name
           user.token = process.env.access_secret
-          unirest.post('http://localhost:3000/users/')
+          unirest.post('https://hogwartsapi.herokuapp.com/users/')
           .send(user)
           .end(function(results){
             console.log('got here!');

@@ -59,7 +59,7 @@ apicalls.getAll().then(function(results){
 app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'apicalls', '$http', function($scope, survey, $location, $auth, apicalls, $http) {
 
   $scope.getDomHouse = function(rest) {
-    $http.get('http://localhost:5000/api/houses/' + rest.dominantHouse).then(function(results) {
+    $http.get('https://mighty-refuge-77675.herokuapp.com/api/houses/' + rest.dominantHouse).then(function(results) {
       console.log(results);
       $scope.results = results.data.body.message
     })

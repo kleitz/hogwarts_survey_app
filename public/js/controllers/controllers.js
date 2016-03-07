@@ -56,7 +56,15 @@ apicalls.getAll().then(function(results){
 
 
 //This is our controller for our survey
-app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'apicalls', function($scope, survey, $location, $auth, apicalls) {
+app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'apicalls', '$http', function($scope, survey, $location, $auth, apicalls, $http) {
+
+  $scope.getDomHouse = function(rest) {
+    $http.get('http://localhost:5000/api/houses/' + rest.dominantHouse).then(function(results) {
+      console.log(results);
+    })
+    // console.log(rest.dominantHouse);
+  }
+
     $scope.scrollAnswers = function(arg) {
       $("." + arg).fadeOut();
       $("." +( arg + 1)).fadeOut()

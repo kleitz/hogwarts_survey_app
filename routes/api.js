@@ -46,6 +46,24 @@ router.post('/surveys', function(req, res, next) {
   })
 });
 
+router.get('/surveys/:surveysname', function(req,res,next){
+ unirest.get('https://hogwartsapi.herokuapp.com/surveys/'+req.params.surveysname)
+ // .send({token: proces.env.access_secret })
+ .end(function(results){
+ // console.log(results.message);
+   res.send(results)
+ })
+})
+
+router.get('/houses/:housesname', function(req,res,next){
+ unirest.get('https://hogwartsapi.herokuapp.com/houses/'+req.params.housesname)
+ // .send({token: proces.env.access_secret })
+ .end(function(results){
+ // console.log(results.message);
+   res.send(results)
+ })
+})
+
 
 
 

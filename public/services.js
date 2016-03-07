@@ -293,6 +293,7 @@ app.service('survey', function() {
       this.sortingHat.dominantHouse = 'ravenclaw'
     }
     console.log(this.sortingHat);
+
     return this.sortingHat
   }
 // ===================================================================

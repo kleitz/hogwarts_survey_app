@@ -56,6 +56,8 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', fu
   $scope.getSorted = survey.getSorted;
   $scope.answerSelect = survey.answerSelect;
   $scope.sortingHat = survey.sortingHat;
+  $scope.sortingHat.name = survey.sortingHat.name;
+  $scope.sortingHat.fbId = survey.sortingHat.fbId;
   $scope.sortingHat.gryffindor = survey.sortingHat.gryffindor;
   $scope.sortingHat.hufflepuff = survey.sortingHat.hufflepuff;
   $scope.sortingHat.slytherin = survey.sortingHat.slytherin;

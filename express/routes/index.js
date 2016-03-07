@@ -11,6 +11,7 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/auth/facebook', function(req,res){
+  console.log('we in da routes');
   var fields = ['id', 'email', 'first_name', 'last_name'];
   var accessTokenUrl = 'https://graph.facebook.com/v2.5/oauth/access_token';
   var graphApiUrl = 'https://graph.facebook.com/v2.5/me?fields=' + fields.join(',');

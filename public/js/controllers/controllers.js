@@ -62,7 +62,17 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', fu
       $("." +( arg + 1)).fadeOut()
       $("." +( arg + 1)).fadeIn('slow')
     }
-    
+
+
+    $scope.facebookShareFunc = function() {
+
+      FB.ui({
+        method: 'share',
+        href: 'http://www.starwars.com/',
+      }, function(response){});
+
+    }
+
 
   // $scope.clickClosed = function() {
   //     $(".closed").fadeOut();

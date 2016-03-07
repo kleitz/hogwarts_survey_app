@@ -1,9 +1,9 @@
 <div ng-controller='splashController'>
   <div class='splashContainer fadeIn'>
-    <div class='envelopes' ng-click='envelopeToggle()'>
-      <img class='closed' src="http://www.clker.com/cliparts/5/7/2/2/1194984500251947888mail1.svg.hi.png">
-      <img class='open' ng-show='openEnvelope' src="http://images.all-free-download.com/images/graphiclarge/open_envelope_clip_art_9256.jpg">
-      <a href="/#/1" class='welcomeMessage' ng-show='openEnvelope'>Find your place at Hogwarts...</a>
+    <div class='envelopes'>
+      <img class='closed' ng-click='envelopeToggle()' src="../images/letterClosed.png">
+      <h2 class='welcomeMessage'>The Wizarding World awaits you...</h2>
+      <img class='open' ng-show='openEnvelope' src="../images/letterOpen.png">
     </div>
   </div>
 </div>

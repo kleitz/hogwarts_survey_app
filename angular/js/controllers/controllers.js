@@ -2,7 +2,7 @@ app.controller('splashController', ['$scope', 'survey', '$http', '$location', 'a
 $scope.fbShow = true;
 $scope.authenticate = function(provider) {
   $auth.authenticate(provider).then(function(results){
-    console.log('hello from authenticate');
+    console.log(results);
     // console.log($location.path('/#/'));
     // console.log(results.data.body.message.firstname + " " + results.data.body.message.lastname);
     // console.log(results.data);

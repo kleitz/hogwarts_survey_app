@@ -23,6 +23,7 @@ router.post('/auth/facebook', function(req,res){
  };
    request.get({ url: accessTokenUrl, qs: params, json: true }, function(err, response, accessToken) {
       if (response.statusCode !== 200) {
+        console.log('*********BREAK POINT*********');
         return res.status(500).send({ message: accessToken.error.message });
       }
       request.get({ url: graphApiUrl, qs: accessToken, json: true }, function(err, response, profile) {
@@ -40,7 +41,6 @@ router.post('/auth/facebook', function(req,res){
           unirest.post('https://hogwartsapi.herokuapp.com/users/')
           .send(user)
           .end(function(results){
-            console.log('got here!');
             res.send(results)
           })
       })

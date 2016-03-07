@@ -93,9 +93,7 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'a
   var surveyResults = survey.surveyQuestions;
 
   $scope.postSurveyResults = function(obj) {
-  apicalls.postSurvey(obj).success(function(result){
-    console.log(result);
-  })
+  apicalls.postSurvey(obj)
 }
 
 //   // ===================================================================

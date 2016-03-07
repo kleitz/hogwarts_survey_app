@@ -29,8 +29,8 @@ app.config(function($routeProvider, $authProvider){
 
     $authProvider.facebook({
         clientId: '1006279116108926',
-        authorizationEndpoint:'https://www.facebook.com/v2.5/dialog/oauth',
-        redirectUri: 'https://mighty-refuge-77675.herokuapp.com/',
+        // authorizationEndpoint:'https://www.facebook.com/v2.5/dialog/oauth',
+        redirectUri: 'https://www.facebook.com/v2.5/dialog/oauth',
         scope: ['email'],
         scopeDelimiter: ',',
         profileFields: ['name', 'id', 'picture.type(large)', 'emails']

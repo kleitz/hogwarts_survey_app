@@ -268,7 +268,6 @@ app.service('survey', function() {
   this.getSorted = function() {
     //This iterates over our object so that we can get our values to push to "arr"
     for (var key in this.sortingHat) {
-      console.log(key);
       if (this.sortingHat.hasOwnProperty(key)) {
         arr.push(this.sortingHat[key])
       }
@@ -294,6 +293,7 @@ app.service('survey', function() {
       this.sortingHat.dominantHouse = 'ravenclaw'
     }
     console.log(this.sortingHat);
+    return this.sortingHat
   }
 // ===================================================================
 

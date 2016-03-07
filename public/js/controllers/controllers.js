@@ -56,7 +56,7 @@ apicalls.getAll().then(function(results){
 
 
 //This is our controller for our survey
-app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', function($scope, survey, $location, $auth) {
+app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'apicalls', function($scope, survey, $location, $auth, apicalls) {
     $scope.scrollAnswers = function(arg) {
       $("." + arg).fadeOut();
       $("." +( arg + 1)).fadeOut()
@@ -90,6 +90,13 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', fu
   $scope.sortingHat.user_name = survey.sortingHat.user_name;
   $scope.sortingHat.zfbId = survey.sortingHat.zfbId;
   $scope.survey = survey.surveyQuestions;
+  var surveyResults = survey.surveyQuestions;
+
+  $scope.postSurveyResults = function(obj) {
+  apicalls.postSurvey(obj).success(function(result){
+    console.log(result);
+  })
+}
 
 //   // ===================================================================
 //   //This empty array collects all the values from the sortingHat object so we can find the greatest one.

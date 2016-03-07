@@ -29,7 +29,6 @@ router.get('/surveys', function(req,res,next){
   unirest.get('https://hogwartsapi.herokuapp.com/surveys/')
   // .send({token: proces.env.access_secret })
   .end(function(results){
-    console.log('got here!');
   // console.log(results.message);
     res.send(results)
   })
@@ -38,10 +37,10 @@ router.get('/surveys', function(req,res,next){
 
 router.post('/surveys', function(req, res, next) {
   req.body.token = process.env.access_secret
+  console.log('got to surveys!');
   unirest.post('https://hogwartsapi.herokuapp.com/surveys/')
   .send(req.body)
   .end(function(results){
-    console.log('got here!');
     res.send(results.data)
   })
 });

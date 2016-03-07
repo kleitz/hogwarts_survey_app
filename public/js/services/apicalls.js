@@ -18,10 +18,23 @@ function post(object) {
 
   return request
 }
+function postSurvey(object) {
+var request = $http({
+method: 'POST',
+url: 'http://localhost:5000/api/surveys',
+data: object,
+headers: {
+    'permission': '/*/',
+    'Access-Control-Allow-Origin' : '*',
+    'Access-Control-Allow-Methods' : 'POST, GET, PUT, DELETE',
+    }
+  })
+}
 
 
   return {
     getAll: getAll,
-    post: post
+    post: post,
+    postSurvey: postSurvey
 }
 })

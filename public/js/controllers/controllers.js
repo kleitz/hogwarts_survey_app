@@ -61,6 +61,7 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'a
   $scope.getDomHouse = function(rest) {
     $http.get('http://localhost:5000/api/houses/' + rest.dominantHouse).then(function(results) {
       console.log(results);
+      $scope.results = results.data.body.message
     })
     // console.log(rest.dominantHouse);
   }

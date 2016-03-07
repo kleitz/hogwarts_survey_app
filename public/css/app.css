@@ -122,6 +122,9 @@
   transition: all 1s ease-in-out;
   animation: wingardiumLeviosa 1.7s infinite;
 }
+.sortingResults {
+  border: 1px solid black;
+}
 h3 {
   text-align: center;
   margin: auto;

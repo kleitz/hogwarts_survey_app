@@ -7,7 +7,10 @@
   </div>
 </div>
 <button type="button" ng-click="postSurveyResults(getSorted()); getDomHouse(getSorted())">Get Sorted!!!</button>
-<button type="button" ng-click="facebookShareFunc()">Share!!!!!</button>
+
 <div class='sortingResults'>
-  
+  <p>{{results.name}}</p>
+  <p>{{results.quote}}</p>
+  <img src="{{results.imageUrl}}" style='width: 100px; height: auto'>
+  <button type="button" ng-click="facebookShareFunc()">Share!!!!!</button>
 </div>

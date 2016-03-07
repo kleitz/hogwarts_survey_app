@@ -1,8 +1,8 @@
 <div class='surveyPage' ng-controller='surveyController'>
   <div class='theQuiz' ng-repeat='question in survey'>
-      <h3 for="surveyOptions">{{question.question}}</h3>
-      <div ng-repeat='answer in question.answers'>
-        <p class='answers {{locomotor}}' ng-click='answerSelect(answer)'>{{answer.option}}</p>
+      <h3  class='{{question.questionId}}' for="surveyOptions">{{question.question}}</h3>
+      <div class='{{question.questionId}}' ng-repeat='answer in question.answers' ng-click='scrollAnswers(question.questionId)'>
+        <p class='answers' ng-click='answerSelect(answer)'>{{answer.option}}</p>
       </div>
   </div>
   <button type="button" ng-click="getSorted()">Get Sorted!!!</button>

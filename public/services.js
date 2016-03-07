@@ -1,7 +1,7 @@
 app.service('survey', function() {
   this.surveyQuestions = [
     question1 = {
-      "question": "You are given a non-magical task to complete in any way you see fit, do you...",
+      "question": "You are given a non-magical task to complete in any way you see fit, what do you do?",
       "questionId": 1,
       answers: [
         {

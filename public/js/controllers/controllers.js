@@ -41,19 +41,13 @@ apicalls.getAll().then(function(results){
 
 //This is our controller for our survey
 app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', function($scope, survey, $location, $auth) {
+    $scope.scrollAnswers = function(arg) {
+      console.log("." +( arg + 1));
+      $("." + arg).fadeOut();
+      $("." +( arg + 1)).fadeOut()
+      $("." +( arg + 1)).fadeIn('slow')
 
-
-  $(".surveyPage").click(function() {
-    scrollAnswers();
-    $('.surveyPage').animate({
-        scrollTop: $(".one").offset().top},
-        'slow');
-  });
-
-  scrollAnswers = function() {
-    $scope.locomotor = "one"
-    console.log("some shit");
-  }
+    }
   $scope.questionScroll = survey.questionScroll;
   $scope.getSorted = survey.getSorted;
   $scope.answerSelect = survey.answerSelect;

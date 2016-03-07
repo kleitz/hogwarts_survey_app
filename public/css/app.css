@@ -3,10 +3,7 @@
   color: #a27502;
 }
 .wholePageContainer {
-  /*background-image: radial-gradient(
-    #47443c,
-    #201a10
-    );*/
+  background-color: #f2eee9;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -77,29 +74,36 @@
 h3 {
   text-align: center;
   margin: auto;
+  margin-top: 25vh;
 }
 .answers {
   text-align: center;
   margin: 3vh;
 }
+.line {
+  color: #a27502;
+}
+.lolz {
+  background-color: red;
+}
 .answers:hover {
   cursor: pointer;
 }
-.theQuiz {
+/*.theQuiz {
   margin: auto;
   padding: 15%;
   padding-left: 10%:
   padding-right: 10%:
-}
+}*/
 .ng-scope {
   margin: auto;
 }
 .surveyPage {
-  background-color: white;
+  /*background-color: white;*/
   border: 2px solid black;
   width: 90vw;
   height: 70vh;
-  overflow: scroll;
+  overflow: hidden;
   animation: fadeIn ease-in 1;
   animation-fill-mode:forwards;
   animation-duration:1s;

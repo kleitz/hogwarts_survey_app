@@ -1,10 +1,25 @@
-app.controller('splashController', ['$scope', 'survey', '$http', '$location', 'apicalls', function($scope, survey, $http, $location, apicalls) {
+app.controller('splashController', ['$scope', 'survey', '$http', '$location', 'apicalls', '$auth', function($scope, survey, $http, $location, apicalls, $auth) {
+$scope.fbShow = true;
+$scope.authenticate = function(provider) {
+  $auth.authenticate(provider).then(function(results){
+    // console.log($location.path('/#/'));
+    // console.log(results.data.body.message.firstname + " " + results.data.body.message.lastname);
+    // console.log(results.data);
+    $scope.user = results.data.body.message.firstname + " " + results.data.body.message.lastname;
+    // $location.path('/1')
+    $scope.openEnvelope = true;
+    $scope.fbShow = false;
+    $(".closed").fadeOut();
+    survey.sortingHat.user_name = results.data.body.message.firstname;
+    survey.sortingHat.zfbId = results.data.body.message.fb_id;
+  });
+};
+
 
 $scope.openEnvelope = false;
 $scope.envelopeToggle= function() {
   $scope.openEnvelope = true;
   $(".closed").fadeOut();
-  console.log("some shit");
 }
 
 $scope.post = function(formInfo) {
@@ -17,8 +32,7 @@ var derp = {
     fb_id: 1232
  }
 apicalls.post(derp).success(function(results){
-  console.log(results);
-
+  // console.log(results);
 })
 
 apicalls.post(formInfo).success(function(results){
@@ -28,12 +42,12 @@ apicalls.post(formInfo).success(function(results){
 }
 
 apicalls.getAll().then(function(results){
-  console.log(results);
+  // console.log(results);
 })
 
 $scope.get = function() {
 apicalls.getAll().then(function(results){
-  console.log(results);
+  // console.log(results);
 })
 
 }
@@ -56,13 +70,13 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', fu
   $scope.getSorted = survey.getSorted;
   $scope.answerSelect = survey.answerSelect;
   $scope.sortingHat = survey.sortingHat;
-  $scope.sortingHat.name = survey.sortingHat.name;
-  $scope.sortingHat.fbId = survey.sortingHat.fbId;
   $scope.sortingHat.gryffindor = survey.sortingHat.gryffindor;
   $scope.sortingHat.hufflepuff = survey.sortingHat.hufflepuff;
   $scope.sortingHat.slytherin = survey.sortingHat.slytherin;
   $scope.sortingHat.ravenclaw = survey.sortingHat.ravenclaw;
   $scope.sortingHat.dominantHouse = survey.sortingHat.dominantHouse;
+  $scope.sortingHat.user_name = survey.sortingHat.user_name;
+  $scope.sortingHat.zfbId = survey.sortingHat.zfbId;
   $scope.survey = survey.surveyQuestions;
 
 //   // ===================================================================
@@ -125,12 +139,12 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', fu
   // $scope.survey = survey.surveyQuestions;
 //   // ===================================================================
 
-  $scope.authenticate = function(provider) {
-    $auth.authenticate(provider).then(function(results){
-      // console.log($location.path('/#/'));
-      console.log(results.data.body.message);
-      $location.path('/1')
-    });
+  // $scope.authenticate = function(provider) {
+  //   $auth.authenticate(provider).then(function(results){
+  //     // console.log($location.path('/#/'));
+  //     console.log(results.data.body.message);
+  //     $location.path('/1')
+  //   });
 
-  };
+  // };
 }])

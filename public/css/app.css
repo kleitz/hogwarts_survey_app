@@ -11,7 +11,11 @@
   color: #a27502;
 }
 .wholePageContainer {
-  background-color: #F8F8F8;
+  /*background-image: #F8F8F8;*/
+  background-image: linear-gradient(
+    #F8F8F8,
+    #e0d7cc
+  );
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -19,6 +23,7 @@
 .fbButton {
   margin: auto;
   z-index: 3;
+  margin-bottom: 5vh;
 }
 @keyframes wingardiumLeviosa {
   0%, 100% { top: 50% }
@@ -43,7 +48,7 @@
   height: 100vh;
 }
 .welcomeMessage {
-  /*opacity: 0;*/
+  opacity: 0;
   /*animation-fill-mode:forwards;
   animation-duration: 4s;
   animation: fadeIn ease-in 1;
@@ -53,12 +58,23 @@
   /*color: #a27502;*/
   color: #F8F8F8;
   margin: auto;
+  margin-top: 7vh;
+  letter-spacing: 4px;
   margin-bottom: 10vh;
   font-family: 'Averia Serif Libre', cursive;
 }
+.welcomeLetterDiv {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 100vw;
+  height: 100%;
+}
 .closed:hover + .welcomeMessage {
-  color: #a27502;
   animation: fadeIn ease-in 1;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  color: #a27502;
 }
 .welcomeMessage:hover {
   cursor: pointer;
@@ -110,6 +126,9 @@ h3 {
   text-align: center;
   margin: auto;
   margin-top: 25vh;
+}
+p, a {
+  text-align: center;
 }
 p:hover {
   color: #835e00

@@ -268,14 +268,17 @@ app.service('survey', function() {
   this.getSorted = function() {
     //This iterates over our object so that we can get our values to push to "arr"
     for (var key in this.sortingHat) {
+      console.log(key);
       if (this.sortingHat.hasOwnProperty(key)) {
         arr.push(this.sortingHat[key])
       }
       //This tells us the INDEX of the largest number in the array, that way we can access the corresponding house name.
+      arr.splice(4, 3)
       var questionIndex = arr.indexOf(Math.max(...arr));
     }
     //The last element in the array is an empty string, so we just get that out to clean it up.
-    arr.pop()
+    // console.log(arr);
+    // console.log(questionIndex);
 
     //Here we just match up what the dominant house name should be in reference to the index.
     if (questionIndex === 0) {
@@ -291,6 +294,25 @@ app.service('survey', function() {
       this.sortingHat.dominantHouse = 'ravenclaw'
     }
     console.log(this.sortingHat);
+
+
+    function post(object) {
+    var request = $http({
+    method: 'POST',
+    url: 'http://localhost:5000/api/surveys',
+    data: object,
+    headers: {
+        'permission': '/*/',
+        'Access-Control-Allow-Origin' : '*',
+        'Access-Control-Allow-Methods' : 'POST, GET, PUT, DELETE',
+        }
+      })
+      console.log("kjdfhglkjahergiluaherliguhaelirugh");
+    }
+
+
+
+
   }
 // ===================================================================
 
@@ -311,16 +333,16 @@ app.service('survey', function() {
     if (answer.house === 'hufflepuff') {
       this.sortingHat.hufflepuff += 1;
     }
-    console.log(this.sortingHat);
+    // console.log(this.sortingHat);
   }
   this.sortingHat = {};
-  this.sortingHat.name = '';
-  this.sortingHat.fbId = '';
   this.sortingHat.gryffindor = 0;
   this.sortingHat.hufflepuff = 0;
   this.sortingHat.slytherin = 0;
   this.sortingHat.ravenclaw = 0;
   this.sortingHat.dominantHouse = '';
+  this.sortingHat.user_name = '';
+  this.sortingHat.zfbId = '';
   this.survey = this.surveyQuestions;
   // ===================================================================
 

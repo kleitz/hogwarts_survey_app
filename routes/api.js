@@ -26,10 +26,9 @@ router.post('/name', function(req, res, next) {
   })
 });
 router.get('/surveys', function(req,res,next){
-  unirest.get('https://hogwartsapi.herokuapp.com/surveys/')
+  unirest.get('http://localhost:3000/surveys/')
   // .send({token: proces.env.access_secret })
   .end(function(results){
-    console.log('got here!');
   // console.log(results.message);
     res.send(results)
   })
@@ -38,10 +37,10 @@ router.get('/surveys', function(req,res,next){
 
 router.post('/surveys', function(req, res, next) {
   req.body.token = process.env.access_secret
-  unirest.post('https://hogwartsapi.herokuapp.com/surveys/')
+  console.log('got to surveys!');
+  unirest.post('http://localhost:3000/surveys/')
   .send(req.body)
   .end(function(results){
-    console.log('got here!');
     res.send(results.data)
   })
 });

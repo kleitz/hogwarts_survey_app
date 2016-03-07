@@ -293,22 +293,7 @@ app.service('survey', function() {
     if (questionIndex === 3) {
       this.sortingHat.dominantHouse = 'ravenclaw'
     }
-    console.log(this.sortingHat);
-
-
-    function post(object) {
-    var request = $http({
-    method: 'POST',
-    url: 'http://localhost:5000/api/surveys',
-    data: object,
-    headers: {
-        'permission': '/*/',
-        'Access-Control-Allow-Origin' : '*',
-        'Access-Control-Allow-Methods' : 'POST, GET, PUT, DELETE',
-        }
-      })
-      console.log("kjdfhglkjahergiluaherliguhaelirugh");
-    }
+    return this.sortingHat
 
 
 

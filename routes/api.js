@@ -41,7 +41,8 @@ router.post('/surveys', function(req, res, next) {
   unirest.post('http://localhost:3000/surveys/')
   .send(req.body)
   .end(function(results){
-    res.send(results.data)
+    console.log(results.body);
+    res.send(results)
   })
 });
 

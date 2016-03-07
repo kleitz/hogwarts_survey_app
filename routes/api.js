@@ -41,7 +41,8 @@ router.post('/surveys', function(req, res, next) {
   unirest.post('https://hogwartsapi.herokuapp.com/surveys/')
   .send(req.body)
   .end(function(results){
-    res.send(results.data)
+    console.log(results.body);
+    res.send(results)
   })
 });
 

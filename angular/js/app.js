@@ -26,9 +26,10 @@ app.config(function($routeProvider, $authProvider){
       templateUrl: 'partials/survey5.html',
       controller: 'surveyController'
     })
-    
+
     $authProvider.facebook({
         clientId: '1006279116108926',
+        redirectUri: 'https://mighty-refuge-77675.herokuapp.com/'
         scope: ['email'],
         scopeDelimiter: ',',
         profileFields: ['name', 'id', 'picture.type(large)', 'emails']

@@ -62,6 +62,8 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', fu
       $("." +( arg + 1)).fadeOut()
       $("." +( arg + 1)).fadeIn('slow')
     }
+    
+
   // $scope.clickClosed = function() {
   //     $(".closed").fadeOut();
   //     console.log("some shit");

@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/auth/facebook', function(req,res){
-console.log("hello fucker");
   var fields = ['id', 'email', 'first_name', 'last_name'];
   var accessTokenUrl = 'https://graph.facebook.com/v2.5/oauth/access_token';
   var graphApiUrl = 'https://graph.facebook.com/v2.5/me?fields=' + fields.join(',');
@@ -37,7 +36,7 @@ console.log("hello fucker");
           user.firstname = profile.first_name
           user.lastname = profile.last_name
           user.token = process.env.access_secret
-          unirest.post('https://hogwartsapi.herokuapp.com/users/')
+          unirest.post('http://localhost:3000/users/')
           .send(user)
           .end(function(results){
             console.log('got here!');

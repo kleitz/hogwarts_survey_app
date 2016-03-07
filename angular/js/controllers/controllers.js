@@ -78,7 +78,7 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'a
 
       FB.ui({
         method: 'share',
-        href: 'http://www.starwars.com/',
+        href: 'https://welcometohogwarts.firebaseapp.com',
       }, function(response){});
 
     }

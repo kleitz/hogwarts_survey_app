@@ -26,9 +26,7 @@ app.config(function($routeProvider, $authProvider){
       templateUrl: 'partials/survey5.html',
       controller: 'surveyController'
     })
-  // $authProvider.loginUrl = 'http://localhost:5000/auth/login';
-  // $authProvider.signupUrl = 'http://localhost:5000/auth/signup';
-
+    
     $authProvider.facebook({
         clientId: '1006279116108926',
         scope: ['email'],

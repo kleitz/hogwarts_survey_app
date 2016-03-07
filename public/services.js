@@ -314,6 +314,8 @@ app.service('survey', function() {
     console.log(this.sortingHat);
   }
   this.sortingHat = {};
+  this.sortingHat.name = '';
+  this.sortingHat.fbId = '';
   this.sortingHat.gryffindor = 0;
   this.sortingHat.hufflepuff = 0;
   this.sortingHat.slytherin = 0;

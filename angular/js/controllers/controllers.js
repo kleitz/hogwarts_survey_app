@@ -2,12 +2,12 @@ app.controller('splashController', ['$scope', 'survey', '$http', '$location', 'a
 $scope.fbShow = true;
 $scope.authenticate = function(provider) {
   $auth.authenticate(provider).then(function(results){
+    $scope.user = results.data.body.message.firstname + " " + results.data.body.message.lastname;
     console.log(results);
   });
 };
 
 $scope.loginAnimation = function() {
-  $scope.user = results.data.body.message.firstname + " " + results.data.body.message.lastname;
   $scope.openEnvelope = true;
   $scope.fbShow = false;
 

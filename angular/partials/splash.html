@@ -8,7 +8,7 @@
         <p>Welcome to Hogwarts, {{user}}</p>
         <a href='/#/1'>Now we need to sort you into your house...</a>
       </div>
-      <button class='fbButton' ng-click="authenticate('facebook')" ng-show='fbShow'>Sign in with Facebook</button>
+      <button class='fbButton' ng-click="authenticate('facebook'); loginAnimation()" ng-show='fbShow'>Sign in with Facebook</button>
     </div>
   </div>
 </div>

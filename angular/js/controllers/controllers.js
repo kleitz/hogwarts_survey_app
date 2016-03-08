@@ -3,19 +3,18 @@ $scope.fbShow = true;
 $scope.authenticate = function(provider) {
   $auth.authenticate(provider).then(function(results){
     console.log(results);
-    // console.log($location.path('/#/'));
-    // console.log(results.data.body.message.firstname + " " + results.data.body.message.lastname);
-    // console.log(results.data);
-    $scope.user = results.data.body.message.firstname + " " + results.data.body.message.lastname;
-    // $location.path('/1')
-    $scope.openEnvelope = true;
-    $scope.fbShow = false;
-    $(".closed").fadeOut();
-    survey.sortingHat.user_name = results.data.body.message.firstname;
-    survey.sortingHat.zfbId = results.data.body.message.fb_id;
   });
 };
 
+$scope.loginAnimation = function() {
+  $scope.user = results.data.body.message.firstname + " " + results.data.body.message.lastname;
+  $scope.openEnvelope = true;
+  $scope.fbShow = false;
+
+  $(".closed").fadeOut();
+  survey.sortingHat.user_name = results.data.body.message.firstname;
+  survey.sortingHat.zfbId = results.data.body.message.fb_id;
+}
 
 $scope.openEnvelope = false;
 $scope.envelopeToggle= function() {

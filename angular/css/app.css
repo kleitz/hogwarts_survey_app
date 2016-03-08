@@ -8,7 +8,12 @@
 
 * {
   font-family: 'Averia Serif Libre', cursive;
+  font-weight: 200;
   color: #a27502;
+}
+span {
+  margin: auto;
+  font-size: 4em;
 }
 .wholePageContainer {
   /*background-image: #F8F8F8;*/
@@ -20,7 +25,21 @@
   width: 100vw;
   display: flex;
 }
+.surveyPage {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #735c34;
+  width: 90vw;
+  height: 70vh;
+  overflow: hidden;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:1s;
+}
 .fbButton {
+  animation: fadeIn ease-in 1;
+  animation-fill-mode: forwards;
+  animation-duration: 10s;
   margin: auto;
   z-index: 3;
   margin-bottom: 5vh;
@@ -47,21 +66,66 @@
   width: 100vw;
   height: 100vh;
 }
+.getStarted:hover {
+  cursor: pointer;
+}
+.decision {
+  margin: auto;
+  margin-top: 25vh;
+}
+.decision:hover {
+  cursor: pointer;
+}
+.answers.last-of-type {
+  background-color: red;
+}
+.paper {
+  margin: auto;
+  margin-left: 10vw;
+  width: 20vw;
+  height:auto;
+}
+.houseCrest {
+  margin: auto;
+  width: auto;
+  height: 150px;
+}
+.hatImg {
+  opacity: .15;
+  z-index: -1;
+  width: 30vw;
+  position: absolute;
+  height: auto;
+  left: 50%;
+  margin-left: -17vw;
+  top: 50%;
+  margin-top: -15vw;
+}
+.letterText {
+  text-align: left;
+  font-size: 1em;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:5s;
+}
 .welcomeMessage {
   opacity: 0;
-  /*animation-fill-mode:forwards;
-  animation-duration: 4s;
-  animation: fadeIn ease-in 1;
-  animation-delay: 1s;*/
   text-align: center;
   z-index: 1;
-  /*color: #a27502;*/
-  color: #F8F8F8;
   margin: auto;
   margin-top: 7vh;
-  letter-spacing: 4px;
+  letter-spacing: 7px;
   margin-bottom: 10vh;
   font-family: 'Averia Serif Libre', cursive;
+}
+.closed:hover + .welcomeMessage {
+  animation: fadeIn ease-in 1;
+  animation-duration: 3s;
+  animation-fill-mode: both;
+  color: #49443b;
+}
+fbButton {
+  border: 1px solid #735c34;
 }
 .welcomeLetterDiv {
   display: flex;
@@ -70,14 +134,25 @@
   width: 100vw;
   height: 100%;
 }
-.closed:hover + .welcomeMessage {
-  animation: fadeIn ease-in 1;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  color: #a27502;
+.mainHeader {
+  color: #49443b;
 }
-.welcomeMessage:hover {
+.open {
+  animation: fadeIn ease-in 1;
+  position: absolute;
+  width: 33vw;
+  height: auto;
+  left: 50%;
+  margin-left: -16.5vw;
+  top: 50%;
+  margin-top: -16.5vw;
   cursor: pointer;
+  /*animation: engorgio ease-in 1;*/
+  animation-fill-mode:forwards;
+  animation-duration:.8s;
+}
+h3 {
+  color: #49443b;
 }
 .splashContainer {
   display: flex;
@@ -88,34 +163,18 @@
 }
 .closed {
   position: absolute;
-  width: 50vw;
+  width: 30vw;
   height: auto;
   left: 50%;
-  margin-left: -25vw;
+  margin-left: -15vw;
   top: 50%;
   transition: all 1s ease-in-out;
-  margin-top: -25vw;
-}
-.open {
-  position: absolute;
-  width: 55vw;
-  height: auto;
-  left: 50%;
-  margin-left: -27.5vw;
-  top: 50%;
-  margin-top: -27.5vw;
+  margin-top: -15vw;
 }
 .fadeIn {
   animation: fadeIn ease-in 1;
   animation-fill-mode:forwards;
   animation-duration:2s;
-}
-.open {
-  cursor: pointer;
-  animation: engorgio ease-in 1;
-  /*animation: fadeIn ease-in 1;*/
-  animation-fill-mode:forwards;
-  animation-duration:.8s;
 }
 .closed:hover {
   cursor: pointer;
@@ -123,7 +182,10 @@
   animation: wingardiumLeviosa 1.7s infinite;
 }
 .sortingResults {
-  border: 1px solid black;
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
 }
 h3 {
   text-align: center;
@@ -157,14 +219,4 @@ p:hover {
 }*/
 .ng-scope {
   margin: auto;
-}
-.surveyPage {
-  /*background-color: white;*/
-  border: 2px solid #434343;
-  width: 90vw;
-  height: 70vh;
-  overflow: hidden;
-  animation: fadeIn ease-in 1;
-  animation-fill-mode:forwards;
-  animation-duration:1s;
 }

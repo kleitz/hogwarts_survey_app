@@ -11,7 +11,8 @@ $scope.loginAnimation = function() {
   $scope.openEnvelope = true;
   $scope.fbShow = false;
 
-  $(".closed").fadeOut();
+  $(".closed").fadeOut('slow');
+  $(".welcomeMessage").fadeOut('slow');
   survey.sortingHat.user_name = results.data.body.message.firstname;
   survey.sortingHat.zfbId = results.data.body.message.fb_id;
 }
@@ -58,6 +59,7 @@ apicalls.getAll().then(function(results){
 //This is our controller for our survey
 app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'apicalls', '$http', function($scope, survey, $location, $auth, apicalls, $http) {
 
+  
   $scope.getDomHouse = function(rest) {
     $http.get('https://mighty-refuge-77675.herokuapp.com/api/houses/' + rest.dominantHouse).then(function(results) {
       console.log(results);
@@ -69,9 +71,17 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'a
     $scope.scrollAnswers = function(arg) {
       $("." + arg).fadeOut();
       $("." +( arg + 1)).fadeOut()
+      $('.hardReturn').fadeOut();
       $("." +( arg + 1)).fadeIn('slow')
+      $('.decision').fadeIn('slow');
     }
 
+    $scope.sortingResults = false;
+    $scope.sortingButton = true;
+    $scope.sortingResultsShow = function() {
+      $scope.sortingResults = true;
+      $scope.sortingButton = false;
+    }
 
     $scope.facebookShareFunc = function() {
 

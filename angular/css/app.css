@@ -6,6 +6,71 @@
 */
 
 
+.deathlyHallows {
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:15s;
+  width: 37px;
+  height: 30px;
+  position: absolute;
+  bottom: 2%;
+  right: 1%;
+  color: #735c34;
+  }
+.nox, .nox:hover {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  color: black;
+}
+.darkMarkDiv {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+}
+.patronus:hover, .patronus {
+  color: black;
+  position: absolute;
+  height: auto;
+  right: 5%;
+  top: 5%;
+}
+.darkMark, a {
+  margin: auto;
+  height: 90%;
+  width: auto;
+}
+.darkMark:hover, a:hover {
+  cursor: url('../images/cursor.png'), pointer;
+}
+.lightSwitch {
+  height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.lumos {
+  letter-spacing: 7px;
+  margin: auto;
+  margin-bottom: 10vh;
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:10s;
+}
+.deathEaters {
+  animation: fadeIn ease-in 1;
+  animation-fill-mode:forwards;
+  animation-duration:1s;
+  cursor: url('../images/cursor.png'), pointer;
+  width: 100vw;
+  height: 100vh;
+	background-color:white;
+  background-color:#000000;
+  background-size: 300px;
+	background-repeat:no-repeat;
+	background-position:50% 50%;
+}
+
 * {
   font-family: 'Averia Serif Libre', cursive;
   font-weight: 200;
@@ -137,6 +202,10 @@ fbButton {
 .mainHeader {
   color: #49443b;
 }
+.openFloater:hover {
+  transition: all 1s ease-in-out;
+  animation: wingardiumLeviosa 1.7s infinite;
+}
 .open {
   animation: fadeIn ease-in 1;
   position: absolute;
@@ -147,7 +216,6 @@ fbButton {
   top: 50%;
   margin-top: -16.5vw;
   cursor: pointer;
-  /*animation: engorgio ease-in 1;*/
   animation-fill-mode:forwards;
   animation-duration:.8s;
 }
@@ -168,7 +236,7 @@ h3 {
   left: 50%;
   margin-left: -15vw;
   top: 50%;
-  transition: all 1s ease-in-out;
+  /*animation: fadeOut ease-in 1;*/
   margin-top: -15vw;
 }
 .fadeIn {

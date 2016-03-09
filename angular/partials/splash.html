@@ -5,7 +5,9 @@
       <h2 class='welcomeMessage'>The Wizarding World awaits you...</h2>
       <div class='welcomeLetterDiv fadeIn' ng-show='openEnvelope'>
         <div class='paper'>
-          <a href="/#/1"><img class='open' src="../images/letterOpen.png"></a>
+          <div class='openFloater'>
+            <a href="/#/1"><img class='open' src="../images/letterOpen.png"></a>
+          </div>
           <p class='letterText mainHeader'>Hogwarts School of Witchcraft and Wizardry</p>
           <p class='letterText'>Headmaster: Albus Dumbledore (Order of Merlin, First Class, Grand Sorc., Chf. Warlock, Supreme Mugwump, International Confed. of Wizards)</p>
           <p class='letterText'>Dear {{user}},</p>

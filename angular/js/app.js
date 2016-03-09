@@ -10,23 +10,10 @@ app.config(function($routeProvider, $authProvider){
       templateUrl: 'partials/survey1.html',
       controller: 'surveyController'
     })
-    .when('/2', {
+    .when('/thedarklordreturns', {
       templateUrl: 'partials/survey2.html',
       controller: 'surveyController'
     })
-    .when('/3', {
-      templateUrl: 'partials/survey3.html',
-      controller: 'surveyController'
-    })
-    .when('/4', {
-      templateUrl: 'partials/survey4.html',
-      controller: 'surveyController'
-    })
-    .when('/auth/facebook', {
-      templateUrl: 'partials/survey5.html',
-      controller: 'surveyController'
-    })
-
     $authProvider.facebook({
         clientId: '1006279116108926',
         url: 'https://mighty-refuge-77675.herokuapp.com/auth/facebook',

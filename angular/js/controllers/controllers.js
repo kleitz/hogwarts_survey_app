@@ -11,17 +11,19 @@ $scope.loginAnimation = function() {
   $scope.openEnvelope = true;
   $scope.fbShow = false;
 
-  $(".closed").fadeOut('slow');
-  $(".welcomeMessage").fadeOut('slow');
+  $(".closed").fadeOut();
+  $(".welcomeMessage").fadeOut();
   survey.sortingHat.user_name = results.data.body.message.firstname;
   survey.sortingHat.zfbId = results.data.body.message.fb_id;
 }
-
-$scope.openEnvelope = false;
-$scope.envelopeToggle= function() {
-  $scope.openEnvelope = true;
-  $(".closed").fadeOut();
+$scope.testShitty = function() {
+  $('.fuckinTest').fadeOut();
 }
+// $scope.openEnvelope = false;
+// $scope.envelopeToggle= function() {
+//   $scope.openEnvelope = true;
+//   $(".closed").fadeOut();
+// }
 
 $scope.post = function(formInfo) {
 
@@ -59,7 +61,28 @@ apicalls.getAll().then(function(results){
 //This is our controller for our survey
 app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'apicalls', '$http', function($scope, survey, $location, $auth, apicalls, $http) {
 
-  
+
+  // $(document).ready(function() {
+  //   $('.nox').fadeOut();
+  // }
+
+  $('.patronus').click(function() {
+    $('.darkMark').fadeOut('slow');
+  })
+
+  $('.lumos').click(function(e) {
+    $('.deathEaters').css({"background-image":"url('../images/lumos.png')"})
+    $(".deathEaters").css('background-position',(e.pageX - 150)+'px '+(e.pageY - 150)+'px');
+  });
+
+		$(".deathEaters").mousemove(function(e){
+      // $('.deathEaters').css({"background-image":"url('../images/lumos.png')"})
+			$(".deathEaters").css('background-position',(e.pageX - 150)+'px '+(e.pageY - 150)+'px');
+	});
+
+
+
+
   $scope.getDomHouse = function(rest) {
     $http.get('https://mighty-refuge-77675.herokuapp.com/api/houses/' + rest.dominantHouse).then(function(results) {
       console.log(results);

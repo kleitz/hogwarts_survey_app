@@ -72,7 +72,12 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'a
 
   $('.lumos').click(function(e) {
     $('.deathEaters').css({"background-image":"url('../images/lumos.png')"})
+
+    //This code is credited to Andrew Mantle: http://www.mantlelabs.com/index.php
+    // =========================================
     $(".deathEaters").css('background-position',(e.pageX - 150)+'px '+(e.pageY - 150)+'px');
+    // =========================================
+
   });
 
 		$(".deathEaters").mousemove(function(e){

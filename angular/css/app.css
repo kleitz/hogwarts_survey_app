@@ -17,23 +17,31 @@
   right: 1%;
   color: #735c34;
   }
-.nox, .nox:hover {
+.nox {
+  letter-spacing: 7px;
   position: absolute;
   top: 5%;
   left: 5%;
   color: black;
+}
+.nox:hover {
+  letter-spacing: 10px;
 }
 .darkMarkDiv {
   height: 100vh;
   width: 100vw;
   display: flex;
 }
-.patronus:hover, .patronus {
+.patronus {
   color: black;
   position: absolute;
   height: auto;
   right: 5%;
   top: 5%;
+  letter-spacing: 7px;
+}
+.patronus:hover {
+  letter-spacing: 10px;
 }
 .darkMark, a {
   margin: auto;
@@ -55,7 +63,10 @@
   margin-bottom: 10vh;
   animation: fadeIn ease-in 1;
   animation-fill-mode:forwards;
-  animation-duration:10s;
+  animation-duration: 7s;
+}
+.lumos:hover {
+  letter-spacing: 10px;
 }
 .deathEaters {
   animation: fadeIn ease-in 1;
@@ -103,11 +114,14 @@ span {
 }
 .fbButton {
   animation: fadeIn ease-in 1;
+  letter-spacing: 2px;
   animation-fill-mode: forwards;
   animation-duration: 10s;
   margin: auto;
   z-index: 3;
   margin-bottom: 5vh;
+  border: none;
+  background: none;
 }
 @keyframes wingardiumLeviosa {
   0%, 100% { top: 50% }
@@ -168,6 +182,7 @@ span {
 }
 .letterText {
   text-align: left;
+  letter-spacing: normal;
   font-size: 1em;
   animation: fadeIn ease-in 1;
   animation-fill-mode:forwards;
@@ -182,10 +197,8 @@ span {
   letter-spacing: 7px;
   margin-bottom: 10vh;
   font-family: 'Averia Serif Libre', cursive;
-}
-.closed:hover + .welcomeMessage {
   animation: fadeIn ease-in 1;
-  animation-duration: 3s;
+  animation-duration: 7s;
   animation-fill-mode: both;
   color: #49443b;
 }

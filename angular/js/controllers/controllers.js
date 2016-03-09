@@ -1,5 +1,6 @@
 app.controller('splashController', ['$scope', 'survey', '$http', '$location', 'apicalls', '$auth', function($scope, survey, $http, $location, apicalls, $auth) {
 $scope.fbShow = true;
+$scope.user = "Student"
 $scope.authenticate = function(provider) {
   $auth.authenticate(provider).then(function(results){
     $scope.user = results.data.body.message.firstname + " " + results.data.body.message.lastname;
@@ -67,8 +68,15 @@ app.controller('surveyController', ['$scope', 'survey', '$location', '$auth', 'a
   // }
 
   $('.patronus').click(function() {
-    $('.darkMark').fadeOut('slow');
+    $('.darkMark').css({'opacity': '0'});
+    $('.patronus').fadeOut('slow');
   })
+
+  // $scope.glow = function() {
+  //   $('.lumos').fadeOut(1000)
+  //   $('.lumos').fadeIn(1000)
+  // }
+  // $scope.setInterval(glow, 1000);
 
   $('.lumos').click(function(e) {
     $('.deathEaters').css({"background-image":"url('../images/lumos.png')"})
